@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState , useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Login() {
+
+    const navigate = useNavigate()
 
     const [isEmail, setisEmail] = useState(false);
 
@@ -17,8 +20,10 @@ function Login() {
 
 
     const handdlesubmit = ()=>{
-        if(inputs.email.length == 0) return setisEmail(true);
+        if(inputs.email.length == 0) return setisEmail(true)
         if(inputs.password.length == 0) return setisPassword(true)
+
+        return navigate('/')
     }
 
     useEffect(() => {
