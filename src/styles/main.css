@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+
 :root{
     --primary : #000A61;
     --font-color : #FF9900;
@@ -34,6 +40,16 @@
 }
 
 
+/* Login */
+
+.lh-sm{
+   transform: translateY(35px);
+}
+
+.monitor{
+    color: var(--primary);
+    transform: translateY(-11px);
+}
 
 .input-primary{
     outline: none;
@@ -59,7 +75,9 @@
 .icon-primary{
     width: 124px;
     height: 124px;
-    top: 151px;
-    left: 71px;
     object-fit: contain;
+    margin-right: 10px;
 }
+
+/* End of Login area */
+
