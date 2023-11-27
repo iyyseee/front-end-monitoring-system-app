@@ -43,8 +43,8 @@ function Login() {
               </div>
           </div>
           <p>Login your dispatcher account</p>
-          <input className={isEmail ? 'input-primary error' : 'input-primary'} type='email' placeholder='email' value={inputs.email} onChange={e=>setinputs({...inputs , email : e.target.value})} />
-          <input className={isPassword ? 'input-primary error' : 'input-primary'} type={showPass ? 'text' : 'password'} placeholder='password' value={inputs.password} onChange={e=>setinputs({...inputs , password : e.target.value})} />
+          <input className={isEmail ? 'input-primary error s-1' : 'input-primary s-1'} type='email' placeholder='email' value={inputs.email} onChange={e=>setinputs({...inputs , email : e.target.value})} />
+          <input className={isPassword ? 'input-primary error s-1' : 'input-primary s-1'} type={showPass ? 'text' : 'password'} placeholder='password' value={inputs.password} onChange={e=>setinputs({...inputs , password : e.target.value})} />
           <div className='d-flex flex-row gap-2'>
             <input onClick={() => showPass ? setshowPass(false) : setshowPass(true)} type='checkbox' id='showpass' />
             <label htmlFor='showpass'>Show password</label>
