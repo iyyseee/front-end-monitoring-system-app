@@ -5,10 +5,10 @@ function Login() {
     <div> 
       <div className='d-flex flex-column align-items-center justify-content-center  vh-100'>
           <div>
-              <h3>CB-Transco</h3>
+              <h1 className='fc-primary-logo lh-sm'>CB-Transco</h1>
               <div className='d-flex flex-row align-items-center'>
                 <img className='icon-primary' src='/imgs/bus.png' alt='' />
-                <h5>Monitoring</h5>
+                <h6 className='monitor'><b>Monitoring</b></h6>
               </div>
           </div>
           <p>Login your dispatcher account</p>

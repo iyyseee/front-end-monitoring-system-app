@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
 :root{
     --primary : #000A61;
     --font-color : #FF9900;
@@ -5,6 +12,7 @@
     --btn-bg-hover : #000a7b;
     --container-bg : #EFEFEF;
 }
+
 
 .logo{
     line-height: 5px;
@@ -39,8 +47,20 @@
     color: var(--font-color-2);
 }
 
+
 .border-rounded{
     border-radius: 20px !important;
+}
+
+/* Login */
+
+.lh-sm{
+   transform: translateY(35px);
+}
+
+.monitor{
+    color: var(--primary);
+    transform: translateY(-11px);
 }
 
 .input-primary{
@@ -67,7 +87,15 @@
 .icon-primary{
     width: 124px;
     height: 124px;
-    top: 151px;
-    left: 71px;
     object-fit: contain;
+    margin-right: 10px;
 }
+
+/* End of Login area */
+
+
+
+
+
+
+
