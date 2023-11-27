@@ -31,7 +31,7 @@
     padding: 10px 20px;
     border: 1px rgb(165, 165, 165) solid;
     margin: 5px 0;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .btn-primary{
@@ -39,7 +39,16 @@
     border: none;
     background: none;
     background-color: var(--primary);
-    padding: 10px 20px;
+    padding: 7px 30px;
     color: white;
+    margin: 25px 0;
     border-radius: 20px;
+}
+
+.icon-primary{
+    width: 124px;
+    height: 124px;
+    top: 151px;
+    left: 71px;
+    object-fit: contain;
 }
