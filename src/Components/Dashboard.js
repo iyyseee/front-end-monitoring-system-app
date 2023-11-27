@@ -1,6 +1,17 @@
 import React from 'react'
+import { Link , useNavigate } from 'react-router-dom'
+
 
 function Dashboard({children}) {
+
+    const navigate = useNavigate()
+
+    const logout = () =>{
+
+        
+        navigate('/login')
+    }
+
   return (
     <div>
         <div className='nav bg-theme-primary p-2 fixed-top d-flex flex-row justify-content-between align-items-center'>
@@ -9,10 +20,10 @@ function Dashboard({children}) {
                 <p className='fc-secondary-logo'>Monitoring</p>
             </div>
             <div>
-                <button className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/home.png' alt='' /></button>
-                <button className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bus.png' alt='' /></button>
-                <button className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bill.png' alt='' /></button>
-                <button className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/power-off.png' alt='' /></button>
+                <Link to={'/'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/home.png' alt='' /></Link>
+                <Link to={'/hino'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bus.png' alt='' /></Link>
+                <Link to={'/transaction'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bill.png' alt='' /></Link>
+                <button onClick={logout} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/power-off.png' alt='' /></button>
             </div>
         </div>
         <div className='container align-items-center d-flex flex-column gap-2'>

@@ -1,10 +1,11 @@
 import React from 'react'
 import Dashboard from '../Components/Dashboard'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
     <Dashboard>
-        <button className='col-xl-4 btn bg-gui p-3 border-rounded'>
+        <Link to={'/checking'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
           <div className='container'>
             <h5 className='text-start'>● Checking</h5>
             <div className='d-flex flex-row align-items-center'>
@@ -12,9 +13,9 @@ function Home() {
               <p><span className='fc-primary-logo'>CB-Transco</span> Hino Passenger Checking and Fare Collecting.</p>
             </div>
           </div>
-        </button>
+        </Link>
 
-        <button className='col-xl-4 btn bg-gui p-3 border-rounded'>
+        <Link to={'/transaction'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
           <div className='container'>
             <h5 className='text-start'>● Transaction</h5>
             <div className='d-flex flex-row align-items-center'>
@@ -22,7 +23,7 @@ function Home() {
               <p><span className='fc-primary-logo'>CB-Transco</span> Hino Transaction Records.</p>
             </div>
           </div>
-        </button>
+        </Link>
     </Dashboard>
   )
 }
