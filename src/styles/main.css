@@ -8,6 +8,17 @@
     line-height: 5px;
 }
 
+.navs-icon{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.navs-btn:hover{
+    background-color: var(--font-color-2) !important;
+    transition: 280ms;
+}
+
 
 .bg-theme-primary{
     background-color: var(--primary);
