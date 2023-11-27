@@ -1,7 +1,26 @@
 :root{
     --primary : #000A61;
+    --font-color : #FF9900;
+    --font-color-2 : #A6A5FF;
 }
 
+.logo{
+    line-height: 5px;
+}
+
+
+.bg-theme-primary{
+    background-color: var(--primary);
+}
+
+.fc-primary-logo{
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.fc-secondary-logo{
+    color: var(--font-color-2);
+}
 
 
 
