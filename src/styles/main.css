@@ -1,0 +1,26 @@
+:root{
+    --primary : #000A61;
+}
+
+
+
+
+.input-primary{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    border: 1px rgb(165, 165, 165) solid;
+    margin: 5px 0;
+    border-radius: 20px;
+}
+
+.btn-primary{
+    outline: none;
+    border: none;
+    background: none;
+    background-color: var(--primary);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+}
