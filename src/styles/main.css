@@ -4,11 +4,15 @@
     font-family: 'Poppins', sans-serif !important;
 }
 
+
 :root{
     --primary : #000A61;
     --font-color : #FF9900;
     --font-color-2 : #A6A5FF;
+    --btn-bg-hover : #000a7b;
+    --container-bg : #EFEFEF;
 }
+
 
 .logo{
     line-height: 5px;
@@ -21,13 +25,17 @@
 }
 
 .navs-btn:hover{
-    background-color: var(--font-color-2) !important;
+    background-color: var(--btn-bg-hover) !important;
     transition: 280ms;
 }
 
 
+.bg-gui{
+    background-color: var(--container-bg) !important;
+}
+
 .bg-theme-primary{
-    background-color: var(--primary);
+    background-color: var(--primary) !important;
 }
 
 .fc-primary-logo{
@@ -39,6 +47,10 @@
     color: var(--font-color-2);
 }
 
+
+.border-rounded{
+    border-radius: 20px !important;
+}
 
 /* Login */
 
@@ -80,4 +92,10 @@
 }
 
 /* End of Login area */
+
+
+
+
+
+
 
