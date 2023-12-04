@@ -8,6 +8,7 @@ import Transaction from './Routes/Transaction';
 import Checking from './Routes/Checking';
 import CHPS from './Routes/CHPS';
 import Record from './Routes/Record';
+import HinoT from './Routes/HinoT';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/> 
         <Route path='/hino' element={<Hino/>}/> 
+        <Route path='/hino/:id' element={<HinoT/>} />
         <Route path='/transaction' element={<Transaction/>}/> 
         <Route path='/transaction/:id' element={<Record/>} />
         <Route path='/checking' element={<Checking/>}/> 
