@@ -35,9 +35,16 @@ function CHPS() {
   const loadDestinations = (type) => {
     setisLoading(true)
     axios.get(process.env.REACT_APP_API_URL + `/destinations/${transaction.origin}/${type}`, {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+      console.log(e.data)
       setpass_dest({ type: type , des_id : e.data[0].destination_id, des_name : e.data[0].destination  , fare : e.data[0].fare})
       setdestinations(e.data)
-      setisLoading(false)
+      return setisLoading(false)
+    }).catch(error =>{
+      console.log(error)
+      if(axios.isCancel(error)){
+        alert(`[status: ${error.response.status} ] Error while sending your request please try again later.`)
+        return setisLoading(false)
+      }
     })
   }
 
@@ -101,7 +108,10 @@ function CHPS() {
         data ,
         {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}
       ).then(e=>{
-        if(e.data.message === 'successfully created') return setisLoading(false)
+        if(e.data.message === 'successfully created'){
+          navigate('/transaction/' + id.id)
+          return setisLoading(false)
+        } 
       }).catch(error =>{
         console.log(error)
         axios.isCancel(error)
@@ -117,7 +127,8 @@ function CHPS() {
   /* validate the transaction id */
   useEffect(() => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL + `/transactions/${id.id}` , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL + `/transactions/bus/${id.id}` , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+      console.log(e.data)
       settransaction(e.data)
       setisLoading(false)
     }).catch(error=>{
