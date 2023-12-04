@@ -12,14 +12,14 @@ function Dashboard({children}) {
 
         console.log(Cookies.get('token'))
 
-        axios.post(process.env.REACT_APP_API_URL + '/logout',{
+        axios.post(process.env.REACT_APP_API_URL + '/logout', {},{
             headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}
           }).then(e=>{
             console.log(e)
-            /* if(e.status == 200){
+            if(e.status == 200){
                 Cookies.remove('token')
                 return navigate('/login')
-            } */
+            }
           })
     }
 
