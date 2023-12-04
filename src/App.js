@@ -6,6 +6,8 @@ import './styles/main.css'
 import Hino from './Routes/Hino';
 import Transaction from './Routes/Transaction';
 import Checking from './Routes/Checking';
+import CHPS from './Routes/CHPS';
+import Record from './Routes/Record';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
         <Route path='/' element={<Home/>}/> 
         <Route path='/hino' element={<Hino/>}/> 
         <Route path='/transaction' element={<Transaction/>}/> 
+        <Route path='/transaction/:id' element={<Record/>} />
         <Route path='/checking' element={<Checking/>}/> 
+        <Route path='/checking/:id' element={<CHPS/>}/> 
         <Route path='/login' element={<Login/>}/> 
       </Routes>
     </Router>
