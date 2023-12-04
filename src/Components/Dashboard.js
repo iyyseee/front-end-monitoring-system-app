@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link , useNavigate } from 'react-router-dom'
-
+import { useEffect , useState } from 'react'
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 function Dashboard({children}) {
 
@@ -8,9 +10,27 @@ function Dashboard({children}) {
 
     const logout = () =>{
 
-        
-        navigate('/login')
+        console.log(Cookies.get('token'))
+
+        axios.post(process.env.REACT_APP_API_URL + '/logout',{
+            headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}
+          }).then(e=>{
+            console.log(e)
+            /* if(e.status == 200){
+                Cookies.remove('token')
+                return navigate('/login')
+            } */
+          })
     }
+
+    useEffect(() => {    
+        axios.get(process.env.REACT_APP_API_URL + '/isAuthorized',{
+          headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}
+        }).catch(error =>{
+            if(error.response.status == 401) return navigate('/login')
+        }) 
+    }, []);
+
 
   return (
     <div>

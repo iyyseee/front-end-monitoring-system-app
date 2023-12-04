@@ -1,12 +1,12 @@
 import React from 'react'
 import Dashboard from '../Components/Dashboard'
-import { useState } from 'react'
-function Hino() {
+
+function Record() {
   return (
     <Dashboard>
-        Hino
+        
     </Dashboard>
   )
 }
 
-export default Hino
+export default Record

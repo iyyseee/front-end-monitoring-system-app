@@ -1,8 +1,14 @@
 import React from 'react'
 import Dashboard from '../Components/Dashboard'
 import { Link } from 'react-router-dom'
-
+import { useEffect , useState } from 'react'
+import axios from 'axios';
+import Cookies from 'js-cookie';
 function Home() {
+
+
+
+    
   return (
     <Dashboard>
         <Link to={'/checking'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
