@@ -27,7 +27,7 @@ function Transaction() {
           <div className='col-xl-4 col-12'>
           {transactions.map((transaction , index)=>{
             return (
-              <a href={`/transaction/${transaction.id}`} key={index} className='bg-gui p-3 rounded d-flex flex-row justify-content-between align-items-center no-link' >
+              <a href={`/transaction/${transaction.id}`} key={index} className='bg-gui p-3 rounded d-flex flex-row justify-content-between align-items-center no-link mt-2' >
                 <div className='d-flex flex-row'>
                   <img className='icon-small' src='/imgs/transaction.png' alt='transaction'/>
                   <p>{transaction.name}<br/>Origin: {transaction.origin}</p>
