@@ -201,7 +201,7 @@ function CHPS() {
                 <div className='d-flex flex-row justify-content-center justify-self-end fixed-bottom w-100 p-2 gap-5'>
                   <button onClick={e=>setisAddPassenger(false)} className='btn-secondary'>Back</button>
                   <button onClick={addPass} className='btn-primary'>Add</button>
-              </div>
+                </div>
               </div>
             </>
           }

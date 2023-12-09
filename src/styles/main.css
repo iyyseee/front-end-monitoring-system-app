@@ -146,6 +146,13 @@
     margin-right: 10px;
 }
 
+.icon-secondary{
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
 .icon-small{
     width: 40px;
     height: 40px;
@@ -273,3 +280,5 @@
     color: black;
     text-decoration: none;
 }
+
+/* this is the style for the edit in the destination  */

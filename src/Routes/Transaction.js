@@ -38,6 +38,7 @@ function Transaction() {
           })}
           </div>
         : <Loading/>}
+        { !isLoading ? (transactions.length == 0) ? <p>No Transactions Available.</p>: <></> : <></>}
     </Dashboard>
   )
 }

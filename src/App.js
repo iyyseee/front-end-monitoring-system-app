@@ -11,6 +11,10 @@ import Record from './Routes/Record';
 import HinoT from './Routes/HinoT';
 import AdminHome from './Admin/AdminHome';
 import AdminLogin from './Admin/AdminLogin';
+import Register from './Routes/Register';
+import AdminPassngers from './Admin/AdminPassngers';
+import AdminDestination from './Admin/AdminDestination';
+import AdminDestinationByID from './Admin/AdminDestinationByID';
 
 function App() {
   return (
@@ -25,11 +29,13 @@ function App() {
         <Route path='/checking' element={<Checking/>}/> 
         <Route path='/checking/:id' element={<CHPS/>}/> 
         <Route path='/login' element={<Login/>}/> 
+        <Route path='/register' element={<Register/>}/>
         {/* admin routes */}
-        <Route path='/admin/' element={<AdminHome/>}/>
-        <Route path='/admin/login' element={<AdminLogin/>} />
-
-
+        <Route path='/admin' element={<AdminHome/>}/>
+        <Route path='/admin/login' element={<AdminLogin/>}/>
+        <Route path='/admin/passengers' element={<AdminPassngers/>} />
+        <Route path='/admin/destinations' element={<AdminDestination/>} />
+        <Route path='/admin/destinations/:id' element={<AdminDestinationByID/>} />
       </Routes>
     </Router>
   );
