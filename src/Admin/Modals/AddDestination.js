@@ -1,10 +1,10 @@
 import axios from 'axios'
 import Cookies from 'js-cookie';
 import React from 'react'
-import { useState , useEffect } from 'react'
+import { useState } from 'react'
 
 
-function AddDestination({isLoading , setisLoading , setopenAddModal}) {
+function AddDestination({setisLoading , setopenAddModal}) {
 
     const origin = ['Butuan' , ' Cabadbaran']
 
@@ -65,9 +65,9 @@ function AddDestination({isLoading , setisLoading , setopenAddModal}) {
             <label htmlFor='sp_fare'>Sp Fare</label>
             <input id='sp_fare' className='input-primary s-1' type='number' placeholder='Sp Fare' onChange={e => setdestination({...destination , sp_fare : e.target.value})} value={destination.sp_fare}/>
             <div className='d-flex flex-row justify-content-center justify-self-end fixed-bottom w-100 p-2 gap-5'>
-                  <button onClick={()=> setopenAddModal(false)} className='btn-secondary'>Back</button>
-                  <button onClick={AddDestination} className='btn-primary'>Add</button>
-                </div>
+                <button onClick={()=> setopenAddModal(false)} className='btn-secondary'>Back</button>
+                <button onClick={AddDestination} className='btn-primary'>Add</button>
+            </div>
         </div>
     )
 }

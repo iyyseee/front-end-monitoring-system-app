@@ -35,8 +35,8 @@ function AdminNav({children}) {
                     <Link to={'/admin'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/home.png' alt='' /></Link>
                     <Link to={'/admin/destinations'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/destination.png' alt='' /></Link>
                     <Link to={'/admin/passengers'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/passenger.png' alt='' /></Link>
-                    <Link to={'/admin'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/dispatcher.png' alt='' /></Link>
-                    <Link to={'/admin'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bus.png' alt='' /></Link>
+                    <Link to={'/admin/dispatchers'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/dispatcher.png' alt='' /></Link>
+                    <Link to={'/admin/hino'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bus.png' alt='' /></Link>
                     <Link to={'/admin'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/bill.png' alt='' /></Link>
                     <button onClick={logout} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/power-off.png' alt='' /></button>
                 </div>

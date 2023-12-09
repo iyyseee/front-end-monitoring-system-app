@@ -73,7 +73,7 @@ function Login() {
             </div>
             {isLoading ? <Loading/> :<button type='submit' className='btn-primary'>Login</button> }
           </form>
-          <p><Link to={'/register'}>Click here</Link> to Register a dispatcher Account.</p>
+          <p><Link to={'/admin/login'}>Click here</Link> to login as admin.</p>
       </div>
     </div>
   )

@@ -118,10 +118,16 @@ function AdminDestinationByID() {
                             <h6><b>Sp Fare :</b>{isEditMode? <input className='input-primary' onChange={e=>setdestination({...destination , sp : e.target.value})} value={destination.sp}/>:destination.sp}</h6>
                         </div>
                         <div className='d-flex flex-row justify-content-center gap-2'>
-                            <button className='btn' onClick={()=> isEditMode ? setisEditMode(false) : setisEditMode(true)}><img className='icon-small' src='/imgs/edit.png' alt='edit'/></button>
+                            <button className='btn' onClick={()=> isEditMode ? setisEditMode(false) : setisEditMode(true)}>
+                                {
+                                    isEditMode ? 
+                                        <img className='icon-small' src='/imgs/cancel.png' alt='cancel'/>
+                                    :   <img className='icon-small' src='/imgs/edit.png' alt='edit'/>
+                                }
+                            </button>
                             {
                                 isEditMode ? 
-                                <button onClick={updateDestination} className='btn btn-light'>Save</button>
+                                <button onClick={updateDestination} className='btn'><img className='icon-small' src='/imgs/save.png' alt='save'/></button>
                                 :<></>
                             }
                             <button onClick={deleteDestination} className='btn'><img className='icon-small' src='/imgs/delete.png' alt='deleted'/></button>

@@ -15,6 +15,9 @@ import Register from './Routes/Register';
 import AdminPassngers from './Admin/AdminPassngers';
 import AdminDestination from './Admin/AdminDestination';
 import AdminDestinationByID from './Admin/AdminDestinationByID';
+import AdminDispatcher from './Admin/AdminDispatcher';
+import AdminDispatcherByID from './Admin/AdminDispatcherByID';
+import AdminBus from './Admin/AdminBus';
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path='/admin/passengers' element={<AdminPassngers/>} />
         <Route path='/admin/destinations' element={<AdminDestination/>} />
         <Route path='/admin/destinations/:id' element={<AdminDestinationByID/>} />
+        <Route path='/admin/dispatchers' element={<AdminDispatcher/>} />
+        <Route path='/admin/dispatchers/:id' element={<AdminDispatcherByID/>} />
+        <Route path='/admin/hino' element={<AdminBus/>} />
       </Routes>
     </Router>
   );
