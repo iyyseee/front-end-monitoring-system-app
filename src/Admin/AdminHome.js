@@ -8,30 +8,68 @@ import AdminNav from './Components/AdminNav';
 
 function AdminHome() {
 
+  const [total_collection, settotal_collection] = useState(0);
+
+  const [total_unit, settotal_unit] = useState(0);
+
+  const [isLoading, setisLoading] = useState(false);
+
+
+  useEffect(() => {
+    setisLoading(true)
+    axios.get(process.env.REACT_APP_API_URL + '/transactions/collection/today' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+      if(e.status === 200){
+        settotal_collection(e.data.total_fare)
+        axios.get(process.env.REACT_APP_API_URL + '/hino/unit/all' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+          if(e.status === 200){
+            settotal_unit(e.data.units)
+            return setisLoading(false)
+          }
+        })
+      }
+    }).catch(error =>{
+      console.log(error)
+      if(axios.isCancel(error)){
+          alert(`[status: ${error.response.status} ] Error while sending your request please try again later.`)
+          return setisLoading(false)
+      }
+  })
+  
+   
+  }, []);
+
   
 
 
   return (
    <AdminNav>
-      <Link to={''} className='col-xl-4 btn bg-gui p-3 border-rounded'>
-          <div className='container'>
-            <h5 className='text-start'>● Liquidate</h5>
-            <div className='d-flex flex-row align-items-center'>
-              <img className='icon-primary' src='/imgs/liquidate.png' alt=''/>
-              <p><span className='fc-primary-logo'>CB-Transco</span> Transaction Liquidation. Start Liquidating Now.</p>
+    {
+      !isLoading ? 
+        <>
+          <Link to={'/admin/collection'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
+            <div className='container'>
+              <h5 className='text-start'>● Total Collection</h5>
+              <div className='d-flex flex-row align-items-center'>
+                <img className='icon-primary' src='/imgs/collection.png' alt=''/>
+                <p><span className='fc-primary-logo'>CB-Transco</span> Today Total Collection : <br/>  <h2><b> ₱ {total_collection}</b></h2> </p>
+              </div>
+            
             </div>
-          </div>
-        </Link>
+          </Link>
 
-        <Link to={''} className='col-xl-4 btn bg-gui p-3 border-rounded'>
-          <div className='container'>
-            <h5 className='text-start'>● Liquidations</h5>
-            <div className='d-flex flex-row align-items-center'>
-              <img className='icon-primary' src='/imgs/transaction.png' alt=''/>
-              <p><span className='fc-primary-logo'>CB-Transco</span> Liquidations. View all Liquidated Transactions.</p>
+          <Link to={'/admin/hino'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
+            <div className='container'>
+              <h5 className='text-start'>● Total Units</h5>
+              <div className='d-flex flex-row align-items-center'>
+                <img className='icon-primary' src='/imgs/bus.png' alt=''/>
+                <p><span className='fc-primary-logo'>CB-Transco</span> Modern Jeep total units. <br/> <h2><b>{total_unit}</b></h2></p>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </>
+      : <Loading/>
+    }
+      
    </AdminNav>
   )
 }
