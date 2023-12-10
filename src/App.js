@@ -18,6 +18,7 @@ import AdminDestinationByID from './Admin/AdminDestinationByID';
 import AdminDispatcher from './Admin/AdminDispatcher';
 import AdminDispatcherByID from './Admin/AdminDispatcherByID';
 import AdminBus from './Admin/AdminBus';
+import AdminBusByID from './Admin/AdminBusByID';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path='/admin/dispatchers' element={<AdminDispatcher/>} />
         <Route path='/admin/dispatchers/:id' element={<AdminDispatcherByID/>} />
         <Route path='/admin/hino' element={<AdminBus/>} />
+        <Route path='/admin/hino/:id' element={<AdminBusByID/>} />
       </Routes>
     </Router>
   );
