@@ -15,7 +15,8 @@ function AdminTransactionByID() {
 
     useEffect(() => {
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + '/transactions/' + id.id , {headers : { 'Authorization' : 'Bearer ' + Cookies.get('admin_token') }} ).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/transactions/' + id.id , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json', 'Authorization' : 'Bearer ' + Cookies.get('admin_token') }} ).then(e=>{
             if(e.status === 200){
                 settransaction(e.data[0])
                 console.log(e.data)

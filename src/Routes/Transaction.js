@@ -12,7 +12,8 @@ function Transaction() {
 
   useEffect(() => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL + '/transactions', {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL + '/transactions', {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
       console.log(e.data)
       settransactions(e.data)
       setisLoading(false)
