@@ -17,10 +17,12 @@ function AdminHome() {
 
   useEffect(() => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL + '/transactions/collection/today' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL + '/transactions/collection/today' , {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
       if(e.status === 200){
         settotal_collection(e.data.total_fare)
-        axios.get(process.env.REACT_APP_API_URL + '/hino/unit/all' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/hino/unit/all' , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
           if(e.status === 200){
             settotal_unit(e.data.units)
             return setisLoading(false)

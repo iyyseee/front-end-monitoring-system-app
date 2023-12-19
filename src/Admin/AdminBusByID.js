@@ -20,7 +20,8 @@ function AdminBusByID() {
 
     const loadTransactions = () =>{
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL  + '/hino/transactions/' + params.id , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL  + '/hino/transactions/' + params.id , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             console.log(e.data)
             if(e.status === 200){
                 settransactions(e.data)
@@ -37,7 +38,8 @@ function AdminBusByID() {
 
     const updateBus = () =>{
         setisLoading(true)
-        axios.put(process.env.REACT_APP_API_URL + '/hino/' + params.id , {name: bus.name} , {headers : { 'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.put(process.env.REACT_APP_API_URL + '/hino/' + params.id , {name: bus.name} , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json', 'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             if(e.status === 200){
                 return window.location.reload()
             }
@@ -52,7 +54,8 @@ function AdminBusByID() {
 
     const deleteBus = () =>{
         setisLoading(true)
-        axios.delete(process.env.REACT_APP_API_URL + '/hino/' + params.id, {headers : { 'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.delete(process.env.REACT_APP_API_URL + '/hino/' + params.id, {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json', 'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             if(e.status === 200){
                 setisLoading(false)
                 return navigate('/admin/hino')
@@ -70,7 +73,8 @@ function AdminBusByID() {
     useEffect(() => {
         
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL  + '/hino/' + params.id , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL  + '/hino/' + params.id , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             if(e.status === 200){
                 console.log(e.data)
                 setbus(e.data)

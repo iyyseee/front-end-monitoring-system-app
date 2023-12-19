@@ -14,7 +14,8 @@ function Hino() {
 
   useEffect(() => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL+'/hino' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL+'/hino' , {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
       sethinos(e.data)
       return setisLoading(false)
     }).catch(error =>{

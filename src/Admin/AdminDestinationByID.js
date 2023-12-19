@@ -39,17 +39,20 @@ function AdminDestinationByID() {
         setisLoading(true)
         axios.put(process.env.REACT_APP_API_URL + '/destinations/'+ destination.id , 
         {origin : destination.origin , destination : destination.destination} , 
-        {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token') }}).then(e=>{
+        {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token') }}).then(e=>{
             console.log(e.data)
             if(e.status === 200){
                 axios.put(process.env.REACT_APP_API_URL + `/fare/${destination.id}/regular` , 
                 {fare : destination.regular}, 
-                {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}} ).then(e=>{
+                {headers : {"ngrok-skip-browser-warning": "69420",
+                'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}} ).then(e=>{
                     if(e.status === 200){
                         console.log(e.data)
                         axios.put(process.env.REACT_APP_API_URL + `/fare/${destination.id}/sp` , 
                         {fare : destination.sp}, 
-                        {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}} ).then(e=>{
+                        {headers : {"ngrok-skip-browser-warning": "69420",
+                        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}} ).then(e=>{
                             if(e.status === 200){
                                 console.log(e.data)
                                 return window.location.reload()
@@ -79,7 +82,8 @@ function AdminDestinationByID() {
 
     useEffect(() => {
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + '/destinations/' + params.id , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/destinations/' + params.id , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             
             if(e.data.length == 0){
                 return navigate('/admin/destinations')

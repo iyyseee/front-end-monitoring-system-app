@@ -34,7 +34,8 @@ function CHPS() {
   /* load destinations */
   const loadDestinations = (type) => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL + `/destinations/${transaction.origin}/${type}`, {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL + `/destinations/${transaction.origin}/${type}`, {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
       console.log(e.data)
       setpass_dest({ type: type , des_id : e.data[0].destination_id, des_name : e.data[0].destination  , fare : e.data[0].fare})
       setdestinations(e.data)
@@ -80,7 +81,8 @@ function CHPS() {
   /* cancel the checking and send back to the /checking route  */
   const cancelChecking = () =>{
     setisLoading(true)
-    axios.delete(process.env.REACT_APP_API_URL + '/transactions/' + id.id , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.delete(process.env.REACT_APP_API_URL + '/transactions/' + id.id , {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
       if(e.data.message === 'successfully deleted.'){
         navigate('/checking')
         return setisLoading(false)
@@ -106,7 +108,8 @@ function CHPS() {
       return axios.post(
         process.env.REACT_APP_API_URL + '/passengers',
         data ,
-        {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}
+        {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}
       ).then(e=>{
         if(e.data.message === 'successfully created'){
           navigate('/transaction/' + id.id)
@@ -127,7 +130,8 @@ function CHPS() {
   /* validate the transaction id */
   useEffect(() => {
     setisLoading(true)
-    axios.get(process.env.REACT_APP_API_URL + `/transactions/bus/${id.id}` , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+    axios.get(process.env.REACT_APP_API_URL + `/transactions/bus/${id.id}` , {headers : {"ngrok-skip-browser-warning": "69420",
+    'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
       console.log(e.data)
       settransaction(e.data)
       setisLoading(false)

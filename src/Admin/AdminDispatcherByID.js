@@ -26,7 +26,8 @@ function AdminDispatcherByID() {
         setisLoading(true)
         axios.put(process.env.REACT_APP_API_URL + '/users/' + params.id , 
         {first_name : dispatcher.first_name , middle_name : dispatcher.middle_name , last_name : dispatcher.last_name} ,
-        {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             console.log(e)
             if(e.status === 200){
                 setisLoading(false)
@@ -49,7 +50,8 @@ function AdminDispatcherByID() {
 
     const deleteUser = () =>{
         axios.delete(process.env.REACT_APP_API_URL + '/users/' + params.id ,
-        {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             console.log(e)
             if(e.status === 200){
                 setisLoading(false)
@@ -69,7 +71,8 @@ function AdminDispatcherByID() {
 
     useEffect(() => {
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + '/users/' + params.id, {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/users/' + params.id, {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             if(e.status === 200){
                 setdispatcher(e.data)
                 return setisLoading(false)

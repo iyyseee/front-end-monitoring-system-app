@@ -13,7 +13,8 @@ function Dashboard({children}) {
         console.log(Cookies.get('token'))
 
         axios.post(process.env.REACT_APP_API_URL + '/logout', {},{
-            headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}
+            headers : {"ngrok-skip-browser-warning": "69420",
+            'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}
           }).then(e=>{
             console.log(e)
             if(e.status == 200){

@@ -21,7 +21,8 @@ function HinoT() {
 
     const loadtrip = () =>{
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + `/transactions/bus_trip/${id.id}` , {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + `/transactions/bus_trip/${id.id}` , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
             console.log(e.data)
             settrips(e.data)
             setisLoading(false)

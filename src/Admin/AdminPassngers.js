@@ -14,7 +14,8 @@ function AdminPassngers() {
 
     useEffect(() => {
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + '/passengers' , {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/passengers' , {headers : {"ngrok-skip-browser-warning": "69420",
+        'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
             if(e.status === 200){
                 setpassengers(e.data)
                 return setisLoading(false)
