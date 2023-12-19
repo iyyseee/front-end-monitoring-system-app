@@ -25,9 +25,13 @@ function Dashboard({children}) {
 
     useEffect(() => {    
         axios.get(process.env.REACT_APP_API_URL + '/isAuthorized',{
-          headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}
+          headers : {"ngrok-skip-browser-warning": "69420",
+            'Content-Type': 'application/json','Authorization' : 'Bearer ' + Cookies.get('token')}
+        }).then(e=>{
+            console.log(e)
         }).catch(error =>{
-            if(error.response.status == 401) return navigate('/login')
+            console.log(error)
+            if(error.response.status === 401) return navigate('/login')
         }) 
     }, []);
 

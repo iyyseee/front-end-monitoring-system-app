@@ -51,18 +51,18 @@ function AdminHome() {
               <h5 className='text-start'>● Total Collection</h5>
               <div className='d-flex flex-row align-items-center'>
                 <img className='icon-primary' src='/imgs/collection.png' alt=''/>
-                <p><span className='fc-primary-logo'>CB-Transco</span> Today Total Collection : <br/>  <h2><b> ₱ {total_collection}</b></h2> </p>
+                <div><p><span className='fc-primary-logo'>CB-Transco</span> Today Total Collection : <br/> </p> <h2><b> ₱ {total_collection || 0}</b></h2></div>
               </div>
             
             </div>
-          </Link>
+          </Link> 
 
           <Link to={'/admin/hino'} className='col-xl-4 btn bg-gui p-3 border-rounded'>
             <div className='container'>
               <h5 className='text-start'>● Total Units</h5>
               <div className='d-flex flex-row align-items-center'>
                 <img className='icon-primary' src='/imgs/bus.png' alt=''/>
-                <p><span className='fc-primary-logo'>CB-Transco</span> Modern Jeep total units. <br/> <h2><b>{total_unit}</b></h2></p>
+                <div><p><span className='fc-primary-logo'>CB-Transco</span> Modern Jeep total units. <br/></p> <h2><b>{total_unit || 0}</b></h2></div>
               </div>
             </div>
           </Link>
