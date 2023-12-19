@@ -32,7 +32,18 @@ function AdminLogin() {
         Cookies.set('admin_token' , e.data.token)
         return navigate('/admin')
       }
-    })
+    }).catch(error =>{
+      console.log(error)
+      if(error.response.status === 422){
+        setisUsername(true)
+        setisPassword(true)
+        return setisLoading(false)
+      }
+      if(axios.isCancel(error)){
+          alert(`[status: ${error.response.status} ] Error while sending your request please try again later.`)
+          return setisLoading(false)
+      }
+  })
     setisUsername(true)
     setisPassword(true)
     return setisLoading(false)

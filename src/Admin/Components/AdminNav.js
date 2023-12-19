@@ -10,14 +10,23 @@ function AdminNav({children}) {
 
     const logout = () =>{
 
-      
-    }
+        console.log(Cookies.get('token'))
 
+        axios.post(process.env.REACT_APP_API_URL + '/logout', {},{
+            headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}
+          }).then(e=>{
+            console.log(e)
+            if(e.status === 200){
+                Cookies.remove('admin_token')
+                return navigate('/admin/login')
+            }
+          })
+    }
     useEffect(() => {    
         axios.get(process.env.REACT_APP_API_URL + '/isAuthorized',{
             headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}
           }).catch(error =>{
-              if(error.response.status == 401) return navigate('/admin/login')
+              if(error.response.status === 401) return navigate('/admin/login')
           }) 
 
     }, []);

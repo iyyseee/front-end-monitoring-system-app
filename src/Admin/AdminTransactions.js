@@ -11,7 +11,7 @@ function AdminTransactions() {
 
     useEffect(() => {
         setisLoading(true)
-        axios.get(process.env.REACT_APP_API_URL + '/transactions/all', {headers : {'Authorization' : 'Bearer ' + Cookies.get('token')}}).then(e=>{
+        axios.get(process.env.REACT_APP_API_URL + '/transactions/all', {headers : {'Authorization' : 'Bearer ' + Cookies.get('admin_token')}}).then(e=>{
           console.log(e.data)
           settransactions(e.data)
           setisLoading(false)
@@ -40,7 +40,7 @@ function AdminTransactions() {
           })}
           </div>
         : <Loading/>}
-        { !isLoading ? (transactions.length == 0) ? <p>No Transactions Available.</p>: <></> : <></>}
+        { !isLoading ? (transactions.length === 0) ? <p>No Transactions Available.</p>: <></> : <></>}
         </AdminNav>
     )
 }

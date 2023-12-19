@@ -3,11 +3,13 @@ import Dashboard from '../Components/Dashboard'
 import { useState, useEffect } from 'react'
 import Loading from '../Components/Loading';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
 function Record() {
 
     const id = useParams()
+
+    const navigate = useNavigate()
 
     const [isLoading, setisLoading] = useState(false);
 
@@ -17,12 +19,19 @@ function Record() {
         setisLoading(true)
         axios.get(process.env.REACT_APP_API_URL + '/transactions/' + id.id , {headers : { 'Authorization' : 'Bearer ' + Cookies.get('token') }} ).then(e=>{
             if(e.status === 200){
-                settransaction(e.data[0])
-                console.log(e.data)
-                setisLoading(false)
+                if(e.data.length > 0){
+                    settransaction(e.data[0])
+                    console.log(e.data)
+                } else{
+                    navigate('/transaction')
+                }
+                return setisLoading(false)
             }
         }).catch(error =>{
             console.log(error)
+            if(error.response.status === 404){
+                return navigate('/transaction')
+            }
             if(axios.isCancel(error)){
                 alert(`[status: ${error.response.status} ] Error while sending your request please try again later.`)
                 return setisLoading(false)

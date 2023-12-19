@@ -47,9 +47,9 @@ function AdminDailyCollection() {
                         {
                             collection.map((collection , index)=>{
                                 return (
-                                    <div key={index} className='bg-gui p-3 mt-2 mb-2 border-rounded d-flex flex-row gap-2'>
+                                    <div key={index} className='bg-gui p-3 mt-2 mb-2 border-rounded d-flex flex-row gap-2 align-items-center'>
                                         <img className='icon-small' src='/imgs/collection.png' alt='collection'/>
-                                        <p>Total Collection: <b>₱ {collection.total_fare}</b> <br/> Date : <b>{collection.date}</b></p>
+                                        <p>Date : <b>{collection.date}</b> <br/> Total Collection: <h5><b>₱ {collection.total_fare}</b></h5></p>
                                     </div>
                                 )
                             })
