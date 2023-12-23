@@ -33,14 +33,14 @@ function AdminNav({children}) {
 
 
   return (
-    <div>
+    <div className='w-100'>
         <div className='nav bg-theme-primary p-2 fixed-top d-flex flex-row justify-content-between align-items-center'>
             <div className='logo'>
                 <h4 className='fc-primary-logo'>CB Transco</h4>
                 <p className='fc-secondary-logo'>Monitoring</p>
             </div>
-            <div className='col-xl-2 col-12 mx-3'>
-                <div className='d-flex flex-row justify-content-center'>
+            <div className='col-xl-3 col-12'>
+                <div className='d-flex flex-row justify-content-end'>
                     <Link to={'/admin'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/home.png' alt='' /></Link>
                     <Link to={'/admin/destinations'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/destination.png' alt='' /></Link>
                     <Link to={'/admin/passengers'} className='btn navs-btn' ><img className='navs-icon' src='/imgs/navs/passenger.png' alt='' /></Link>
