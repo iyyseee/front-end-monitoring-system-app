@@ -72,6 +72,7 @@ function AdminLogin() {
               <label htmlFor='showpass'>Show password</label>
             </div>
             {isLoading ? <Loading/> :<button type='submit' className='btn-primary'>Login</button> }
+            <p><Link to={'/login'}>Click here</Link> to login as dispatcher.</p>
           </form>
       </div>
     </div>
