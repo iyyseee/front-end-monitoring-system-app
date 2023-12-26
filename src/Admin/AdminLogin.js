@@ -44,8 +44,6 @@ function AdminLogin() {
           return setisLoading(false)
       }
   })
-    setisUsername(true)
-    setisPassword(true)
     return setisLoading(false)
   }
 
